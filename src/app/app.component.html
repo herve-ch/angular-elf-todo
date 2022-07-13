@@ -1,0 +1,14 @@
+<h2>Books</h2>
+
+<app-book-list
+  [books]="repo.books$ | async"
+  (add)="repo.addToCollection($event)"
+></app-book-list>
+
+<h2>My Collection</h2>
+
+<app-book-collection
+  [books]="repo.ownBooks$ | async"
+  (remove)="repo.removeFromCollection($event)"
+>
+</app-book-collection>
